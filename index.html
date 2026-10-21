@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kicks Hub — sneakers, official and classy shoes for men, women and unisex. UK sizes, KES prices, M-Pesa or cash on delivery across Kenya.">
+  <title>Kicks Hub | Footwear for every stride</title>
+  <link rel="icon" href="assets/logo/kicks-hub-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Welcome to Kicks Hub</a>
+  <div class="loader-bar" id="loader-bar" hidden></div>
+
+  <p class="promo-bar">Free delivery on orders over KES 10,000 ·</p>
+  <p>Payments are either M&#8209;Pesa or cash on delivery</p>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#/" aria-label="Kicks Hub home">
+        <img src="assets/kicks-hub-logo.jpeg" class="logo-mark" alt="Kicks Hub logo" style="width: 800px; height: auto;">
+      </a>
+
+      <nav class="main-nav" aria-label="Shop by">
+        <ul>
+          <li><a href="#/" data-nav="all">All shoes</a></li>
+          <li><a href="#/shop/men" data-nav="men">Men</a></li>
+          <li><a href="#/shop/women" data-nav="women">Women</a></li>
+          <li><a href="#/shop/unisex" data-nav="unisex">Unisex</a></li>
+          <li><a href="#/shop/sale" data-nav="sale" class="nav-sale">Sale</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <form class="search-form" id="search-form" role="search">
+          <label for="search" class="visually-hidden">Search shoes or brands</label>
+          <input type="search" id="search" name="search" placeholder="Search shoes or brands" autocomplete="off">
+        </form>
+        <a class="cart-link" href="#/cart" id="cart-link" aria-label="Cart, 0 items">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="view-shop" class="view" aria-labelledby="shop-title">
+      <div class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">New season · UK sizes 3–12</p>
+            <h1 id="shop-title">Every size. Every stride.</h1>
+            <p>Sneakers, official and classy shoes for men, women and everyone in between. Delivered across Kenya.</p>
+            <a class="btn btn-accent" href="#catalogue">Shop now</a>
+          </div>
+          <ul class="hero-tiles">
+            <li><a href="#/shop/men" class="tile tile-mint"><strong>Men</strong><span id="count-men">–</span></a></li>
+            <li><a href="#/shop/women" class="tile tile-white"><strong>Women</strong><span id="count-women">–</span></a></li>
+            <li><a href="#/shop/unisex" class="tile tile-red"><strong>Unisex</strong><span id="count-unisex">–</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container shop-layout" id="catalogue">
+        <aside class="filters panel" aria-labelledby="filters-title">
+          <div class="filters-head">
+            <h2 id="filters-title">Filters</h2>
+            <button type="button" class="link-btn" id="clear-filters">Clear all</button>
+          </div>
+          <form id="filter-form">
+            <fieldset>
+              <legend>Category</legend>
+              <label class="check"><input type="radio" name="category" value="" checked> All</label>
+              <label class="check"><input type="radio" name="category" value="sneakers"> Sneakers</label>
+              <label class="check"><input type="radio" name="category" value="official"> Official / Corporate</label>
+            </fieldset>
+            <fieldset>
+              <legend>Brand</legend>
+              <label for="filter-brand" class="visually-hidden">Brand</label>
+              <select id="filter-brand" name="brand"><option value="">All brands</option></select>
+            </fieldset>
+            <fieldset>
+              <legend>UK size</legend>
+              <div class="size-filter" id="size-filter"></div>
+            </fieldset>
+            <fieldset>
+              <legend>Max price (KES)</legend>
+              <label for="filter-price" class="visually-hidden">Maximum price</label>
+              <input type="range" id="filter-price" name="maxPrice" min="2000" max="12000" step="500" value="12000">
+              <output id="price-output" for="filter-price">Up to KES 12,000</output>
+            </fieldset>
+          </form>
+        </aside>
+
+        <section class="results" aria-labelledby="results-title">
+          <div class="results-bar">
+            <h2 id="results-title" class="results-title">All shoes</h2>
+            <p class="results-count" id="results-count" aria-live="polite"></p>
+            <label for="sort" class="visually-hidden">Sort by</label>
+            <select id="sort" name="sort">
+              <option value="newest">Newest first</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="name">Name A–Z</option>
+            </select>
+          </div>
+          <p class="state-message" id="shop-message" hidden></p>
+          <ul class="product-grid" id="product-grid">
+
+  <!-- Shoe 1 (Sneakers) -->
+  <li class="product-card" data-category="sneakers">
+    <img src="assets/shoe1.webp" alt="Classic White Sneaker" class="product-img"style="width: 400px; height: 350ppx; object-fit: cover;">
+    <p class="price">KES 3,500</p>
+    <button class="btn-add">Add to Cart</button>
+  </li>
+
+  <!-- Shoe 2 (Official / Corporate) -->
+  <li class="product-card" data-category="official">
+    <img src="assets/shoe2.webp" alt="Leather Oxford" class="product-img" style="width: 400px; height: 350px; object-fit: cover;">
+    <h3>Leather Oxford</h3>
+    <p class="price">KES 6,500</p>
+    <button class="btn-add">Add to Cart</button>
+  </li>
+
+  <!-- Shoe 3 ( Sneakers) -->
+  <li class="product-card" data-category="sneakers">
+    <img src="assets/shoe3.webp" alt="Classy Leather Sneaker" class="product-img" style="width: 400px; height: 350px; object-fit: cover;">
+    <h3>Classy  Sneaker</h3>
+    <p class="price">KES 4,000</p>
+    <button class="btn-add">Add to Cart</button>
+  </li>
+<!-- Shoe 4 (Unisex) -->
+  <li class="product-card" data-category="unisex">
+    <img src="assets/shoe4.webp" alt="Unisex Sneaker" class="product-img" style="width: 400px; height: 350px; object-fit: cover;">
+    <h3> Unisex Sneaker</h3>
+    <p class="price">KES 3,000</p>
+    <button class="btn-add">Add to Cart</button>
+  </li>
+  <!-- Shoe 5 (Female Sneakers) -->
+  <li class="product-card" data-category="sneakers">
+    <img src="assets/shoe5.webp" alt="Female Sneaker" class="product-img" style="width: 400px; height: 350px; object-fit: cover;">
+    <h3>Female Sneaker</h3>
+    <p class="price">KES 3,500</p>
+    <button class="btn-add">Add to Cart</button>
+    </li>
+    <li class="product-card" data-category="Sneakers">
+    <img src="assets/shoe6.webp" alt="Female Sneaker" class="product-img" style="width: 400px; height: 350px; object-fit: cover;">
+    <h3>Female  Sneaker</h3>
+    <p class="price">KES 3,000</p>
+    <button class="btn-add">Add to Cart</button>
+  </li>
+  <!-- Shoe 7 (Unisex) -->
+  <li class="product-card" data-category="male">
+    <img src="assets/shoe7.webp" alt="Official male shoe" class="product-img" style="width: 400px; height: 350px; object-fit: cover;">
+    <h3>Official male shoe</h3>
+    <p class="price">KES 5,500</p>
+    <button class="btn-add">Add to Cart</button>
+  </li>
+  <!-- Shoe 8 (Unisex) -->
+  <li class="product-card" data-category="unisex">
+    <img src="assets/shoe8.webp" alt="Unisex Official" class="product-img" style="width: 400px; height: 350px; object-fit: cover;">
+    <h3>Unisex Official</h3>
+    <p class="price">KES 3,500</p>
+    <button class="btn-add">Add to Cart</button>
+  </li> 
+  <!-- Shoe 9 (Unisex) -->
+  <li class="product-card" data-category="unisex">
+    <img src="assets/shoe9.webp" alt="UnisexSneakers" class="product-img" style="width: 400px; height: 350px; object-fit: cover;">
+    <h3>Unisex Sneakers</h3>
+    <p class="price">KES 3,500</p>
+    <button class="btn-add">Add to Cart</button>
+  </li>
+</ul>
+        </section>
+      </div>
+    </section>
+
+    <section id="view-product" class="view container" aria-live="polite" hidden>
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#/">Shop</a> / <span id="crumb-name"></span></nav>
+      <p class="state-message" id="product-message" hidden></p>
+      <article class="product-detail" id="product-detail" hidden>
+        <div class="product-media">
+          <img id="pd-image" src="" alt="" width="800" height="800">
+          <span class="badge" id="pd-badge" hidden></span>
+        </div>
+        <div class="product-info">
+          <p class="eyebrow-muted" id="pd-meta"></p>
+          <h1 id="pd-name"></h1>
+          <p class="price-line"><span id="pd-price" class="price"></span> <s id="pd-was" hidden></s></p>
+          <p id="pd-description" class="pd-description"></p>
+
+          <form id="add-form" novalidate>
+            <fieldset>
+              <legend>Colour: <span id="pd-colour-name"></span></legend>
+              <div class="swatches" id="pd-colours"></div>
+            </fieldset>
+            <fieldset>
+              <legend>Size (UK): <span id="pd-size-name">choose one</span></legend>
+              <div class="size-grid" id="pd-sizes"></div>
+              <p class="stock-note" id="pd-stock"></p>
+            </fieldset>
+            <div class="add-row">
+              <div class="qty" role="group" aria-label="Quantity">
+                <button type="button" class="qty-btn" id="qty-dec" aria-label="Decrease quantity">−</button>
+                <output id="qty-value" aria-live="polite">1</output>
+                <button type="button" class="qty-btn" id="qty-inc" aria-label="Increase quantity">+</button>
+              </div>
+              <button type="submit" class="btn btn-accent btn-wide" id="add-btn">Add to cart</button>
+            </div>
+            <p class="form-error" id="add-error" role="alert"></p>
+          </form>
+
+          <ul class="perks">
+            <li><strong>Delivery:</strong> same day in Nairobi CBD &amp; Westlands; 1–4 days elsewhere in Kenya.</li>
+            <li><strong>Payment:</strong> M-Pesa or cash on delivery.</li>
+            <li><strong>Exchanges:</strong> free size exchange within 7 days if unworn.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="view-cart" class="view container" aria-labelledby="cart-title" hidden>
+      <h1 id="cart-title" class="page-title">Your cart</h1>
+      <div class="cart-layout">
+        <div>
+          <p class="state-message" id="cart-message" hidden></p>
+          <ul class="cart-lines" id="cart-lines"></ul>
+        </div>
+        <aside class="panel summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Order summary</h2>
+          <label for="cart-zone">Delivery to</label>
+          <select id="cart-zone" class="zone-select"></select>
+          <dl class="totals" id="cart-totals"></dl>
+          <p class="hint" id="cart-free-note"></p>
+          <a class="btn btn-accent btn-wide" href="#/checkout" id="to-checkout">Go to checkout</a>
+          <a class="link-btn" href="#/">Continue shopping</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="view-checkout" class="view container" aria-labelledby="checkout-title" hidden>
+      <h1 id="checkout-title" class="page-title">Checkout</h1>
+      <div class="cart-layout">
+        <form id="checkout-form" class="panel checkout-form" novalidate>
+          <h2>Delivery details</h2>
+          <div class="field">
+            <label for="co-name">Full name</label>
+            <input id="co-name" name="name" autocomplete="name" required aria-describedby="co-name-error">
+            <p class="field-error" id="co-name-error"></p>
+          </div>
+          <div class="field">
+            <label for="co-phone">Phone number</label>
+            <input id="co-phone" name="phone" type="tel" autocomplete="tel" placeholder="0712 345 678" required aria-describedby="co-phone-error co-phone-hint">
+            <p class="hint" id="co-phone-hint">Safaricom number for M-Pesa, or any Kenyan number for cash on delivery.</p>
+            <p class="field-error" id="co-phone-error"></p>
+          </div>
+          <div class="field">
+            <label for="co-zone">Delivery zone</label>
+            <select id="co-zone" name="zoneId" class="zone-select" required aria-describedby="co-zoneId-error"></select>
+            <p class="field-error" id="co-zoneId-error"></p>
+          </div>
+          <div class="field">
+            <label for="co-location">Delivery location</label>
+            <input id="co-location" name="location" placeholder="Estate, street and building, e.g. Kilimani, Argwings Kodhek Rd, Apt 4B" required aria-describedby="co-location-error">
+            <p class="field-error" id="co-location-error"></p>
+          </div>
+          <div class="field">
+            <label for="co-notes">Notes for the rider <span class="optional">(optional)</span></label>
+            <textarea id="co-notes" name="notes" rows="2" maxlength="200"></textarea>
+          </div>
+          <fieldset class="field">
+            <legend>Payment</legend>
+            <label class="pay-option"><input type="radio" name="payment" value="mpesa" checked> <span><strong>M-Pesa</strong> — pay now with an STK prompt on your phone</span></label>
+            <label class="pay-option"><input type="radio" name="payment" value="cod"> <span><strong>Cash on delivery</strong> — pay the rider when your shoes arrive</span></label>
+            <p class="field-error" id="co-payment-error"></p>
+          </fieldset>
+          <p class="form-error" id="checkout-error" role="alert"></p>
+          <button type="submit" class="btn btn-accent btn-wide" id="place-order">Place order</button>
+        </form>
+        <aside class="panel summary" aria-labelledby="co-summary-title">
+          <h2 id="co-summary-title">Your order</h2>
+          <ul class="mini-lines" id="co-lines"></ul>
+          <dl class="totals" id="co-totals"></dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="view-confirmation" class="view container" aria-labelledby="confirm-title" hidden>
+      <div class="panel confirmation">
+        <div class="confirm-icon" aria-hidden="true">✓</div>
+        <h1 id="confirm-title">Order placed</h1>
+        <p id="confirm-text"></p>
+        <dl class="totals" id="confirm-totals"></dl>
+        <a class="btn btn-primary" href="#/">Keep shopping</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="logo-word logo-word-light">KICKS<span>HUB</span></p>
+      <p>Online Store, Nairobi ·Delivering country wide. Open Mon–Sat, 9 am – 7 pm</p>
+      <p>© 2026 Kicks Hub · MIT Licence</p>
+    </div>
+  </footer>
+
+  <dialog id="mpesa-dialog" aria-labelledby="mpesa-title">
+    <div class="mpesa">
+      <p class="mpesa-brand">M-PESA</p>
+      <h2 id="mpesa-title">Check your phone</h2>
+      <p id="mpesa-text"></p>
+      <div class="spinner" id="mpesa-spinner" aria-hidden="true"></div>
+      <p class="hint">This is a simulation for the demo — no real money moves.</p>
+    </div>
+  </dialog>
+
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+
+  <template id="tpl-product-card">
+    <li>
+      <article class="card">
+        <div class="card-media">
+          <img src="" alt="" width="400" height="400" loading="lazy">
+          <span class="badge js-badge"></span>
+        </div>
+        <div class="card-body">
+          <p class="card-meta js-meta"></p>
+          <h3><a href="" class="js-name"></a></h3>
+          <ul class="card-colours js-colours"></ul>
+          <p class="card-sizes js-sizes"></p>
+          <p class="price-line"><span class="price js-price"></span> <s class="js-was" hidden></s></p>
+        </div>
+      </article>
+    </li>
+  </template>
+
+  <template id="tpl-cart-line">
+    <li class="cart-line">
+      <img src="" alt="" width="88" height="88">
+      <div class="line-info">
+        <h2><a href="" class="js-name"></a></h2>
+        <p class="js-variant"></p>
+        <p class="js-unit"></p>
+      </div>
+      <div class="qty" role="group">
+        <button type="button" class="qty-btn" data-action="dec" aria-label="One less">−</button>
+        <output class="js-qty"></output>
+        <button type="button" class="qty-btn" data-action="inc" aria-label="One more">+</button>
+      </div>
+      <p class="line-total js-total"></p>
+      <button type="button" class="link-btn line-remove" data-action="remove">Remove</button>
+      <p class="line-issue js-issue" role="alert" hidden></p>
+    </li>
+  </template>
+
+  <template id="tpl-mini-line">
+    <li>
+      <img src="" alt="" width="52" height="52">
+      <p class="mini-text"><span class="js-name"></span><span class="js-variant"></span></p>
+      <strong class="js-total"></strong>
+    </li>
+  </template>
+
+  <template id="tpl-size-chip">
+    <button type="button" class="chip" aria-pressed="false"></button>
+  </template>
+
+  <template id="tpl-swatch">
+    <button type="button" class="swatch" aria-pressed="false"></button>
+  </template>
+</body>
+</html>
