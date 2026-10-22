@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kicks Hub — sneakers, official and classy shoes for men, women and unisex. UK sizes, KES prices, M-Pesa or cash on delivery across Kenya.">
   <title>Kicks Hub | Footwear for every stride</title>
-  <link rel="icon" href="assets/logo/kicks-hub-mark.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/kicks-hub-logo.jpeg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap">
@@ -13,18 +13,15 @@
   <script type="module" src="js/main.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Welcome to Kicks Hub</a>
+ <a class="skip-link" href="#main">Skip to content</a>
   <div class="loader-bar" id="loader-bar" hidden></div>
 
-  <p class="promo-bar">Free delivery on orders over KES 10,000 ·</p>
-  <p>Payments are either M&#8209;Pesa or cash on delivery</p>
-
+  <p class="promo-bar">Free delivery on orders over KES 10,000 · Pay with M&#8209;Pesa or cash on delivery</p>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#/" aria-label="Kicks Hub home">
-        <img src="assets/kicks-hub-logo.jpeg" class="logo-mark" alt="Kicks Hub logo" style="width: 800px; height: auto;">
+          <a class="logo" href="#/" aria-label="Kicks Hub home"></a>
+        <img src="assets/kicks-hub-logo.jpeg" class="logo-mark" alt="Kicks Hub logo">
       </a>
-
       <nav class="main-nav" aria-label="Shop by">
         <ul>
           <li><a href="#/" data-nav="all">All shoes</a></li>
@@ -89,8 +86,8 @@
             <fieldset>
               <legend>Max price (KES)</legend>
               <label for="filter-price" class="visually-hidden">Maximum price</label>
-              <input type="range" id="filter-price" name="maxPrice" min="2000" max="12000" step="500" value="12000">
-              <output id="price-output" for="filter-price">Up to KES 12,000</output>
+                            <input type="range" id="filter-price" name="maxPrice" min="2000" max="20000" step="500" value="20000">
+              <output id="price-output" for="filter-price">Up to KES 20,000</output>
             </fieldset>
           </form>
         </aside>
@@ -108,73 +105,71 @@
             </select>
           </div>
           <p class="state-message" id="shop-message" hidden></p>
-          <ul class="product-grid" id="product-grid">
-
-  <!-- Shoe 1 (Sneakers) -->
-  <li class="product-card" data-category="sneakers">
-    <img src="assets/shoe1.webp" alt="Classic White Sneaker" class="product-img">
-    <h3>Airforce 1 white</h3>
-    <p class="price">KES 3,500</p>
-    <button class="btn-add">Add to Cart</button>
-  </li>
-
-  <!-- Shoe 2 (Official / Corporate) -->
-  <li class="product-card" data-category="official">
-    <img src="assets/shoe2.webp" alt="Leather Oxford" class="product-img">
-    <h3>Windsor/Black Leather Sole Oxford</h3>
-    <p class="price">KES 17,000</p>
-    <button class="btn-add">Add to Cart</button>
-  </li>
-
-  <!-- Shoe 3 ( Sneakers) -->
-  <li class="product-card" data-category="sneakers">
-    <img src="assets/shoe3.webp" alt="Classy Leather Sneaker" class="product-img">
-    <h3>Campus Adidas</h3>
-    <p class="price">KES 4,000</p>
-    <button class="btn-add">Add to Cart</button>
-  </li>
-<!-- Shoe 4 (Unisex) -->
-  <li class="product-card" data-category="unisex">
-    <img src="assets/shoe4.webp" alt="Unisex Sneaker" class="product-img">
-    <h3> J4/ Unisex Sneaker</h3>
-    <p class="price">KES 3,000</p>
-    <button class="btn-add">Add to Cart</button>
-  </li>
-  <!-- Shoe 5 (Female Sneakers) -->
-  <li class="product-card" data-category="sneakers">
-    <img src="assets/shoe5.webp" alt="Female Sneaker" class="product-img">
-    <h3>Female Sneaker</h3>
-    <p class="price">KES 3,500</p>
-    <button class="btn-add">Add to Cart</button>
-    </li>
-    <li class="product-card" data-category="Sneakers">
-    <img src="assets/shoe6.webp" alt="Female Sneaker" class="product-img">
-    <h3>Female  Sneaker</h3>
-    <p class="price">KES 3,000</p>
-    <button class="btn-add">Add to Cart</button>
-  </li>
-  <!-- Shoe 7 (Unisex) -->
-  <li class="product-card" data-category="male">
-    <img src="assets/shoe7.webp" alt="Official male shoe" class="product-img">
-    <h3>Official male shoe</h3>
-    <p class="price">KES 5,500</p>
-    <button class="btn-add">Add to Cart</button>
-  </li>
-  <!-- Shoe 8 (Unisex) -->
-  <li class="product-card" data-category="unisex">
-    <img src="assets/shoe8.webp" alt="Unisex Official" class="product-img">
-    <h3>Unisex Official</h3>
-    <p class="price">KES 3,500</p>
-    <button class="btn-add">Add to Cart</button>
-  </li> 
-  <!-- Shoe 9 (Unisex) -->
-  <li class="product-card" data-category="unisex">
-    <img src="assets/shoe9.webp" alt="Unisex Sneakers" class="product-img">
-    <h3>Unisex Sneakers</h3>
-    <p class="price">KES 3,500</p>
-    <button class="btn-add">Add to Cart</button>
-  </li>
-</ul>
+                    <ul class="product-grid" id="product-grid">
+            <!-- Shoe 1 -->
+            <li class="product-card" data-category="sneakers">
+              <img src="assets/shoe1.webp" alt="Airforce 1 White" class="product-img">
+              <h3>Airforce 1 White</h3>
+              <p class="price">KES 3,500</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+            <!-- Shoe 2 -->
+            <li class="product-card" data-category="official">
+              <img src="assets/shoe2.webp" alt="Windsor black leather sole Oxford" class="product-img">
+              <h3>Windsor Black Leather Sole Oxford</h3>
+              <p class="price">KES 17,000</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+            <!-- Shoe 3 -->
+            <li class="product-card" data-category="sneakers">
+              <img src="assets/shoe3.webp" alt="Adidas Campus" class="product-img">
+              <h3>Campus Adidas</h3>
+              <p class="price">KES 4,000</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+            <!-- Shoe 4 -->
+            <li class="product-card" data-category="sneakers">
+              <img src="assets/shoe4.webp" alt="J4 unisex sneaker" class="product-img">
+              <h3>J4 Unisex Sneaker</h3>
+              <p class="price">KES 3,000</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+            <!-- Shoe 5 -->
+            <li class="product-card" data-category="sneakers">
+              <img src="assets/shoe5.webp" alt="Female sneaker" class="product-img">
+              <h3>Female Sneaker</h3>
+              <p class="price">KES 3,500</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+            <!-- Shoe 6 -->
+            <li class="product-card" data-category="sneakers">
+              <img src="assets/shoe6.webp" alt="Female retro sneaker" class="product-img">
+              <h3>Female Sneaker Retro</h3>
+              <p class="price">KES 3,000</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+            <!-- Shoe 7 -->
+            <li class="product-card" data-category="official">
+              <img src="assets/shoe7.webp" alt="Official male shoe" class="product-img">
+              <h3>Official Male Shoe</h3>
+              <p class="price">KES 5,500</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+            <!-- Shoe 8 -->
+            <li class="product-card" data-category="official">
+              <img src="assets/shoe8.webp" alt="Unisex official shoe" class="product-img">
+              <h3>Unisex Official</h3>
+              <p class="price">KES 3,500</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+            <!-- Shoe 9 -->
+            <li class="product-card" data-category="sneakers">
+              <img src="assets/shoe9.webp" alt="Unisex sneakers" class="product-img">
+              <h3>Unisex Sneakers</h3>
+              <p class="price">KES 3,500</p>
+              <button class="btn-add">Add to Cart</button>
+            </li>
+          </ul>
         </section>
       </div>
     </section>
