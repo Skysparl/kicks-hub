@@ -1,5 +1,4 @@
-import { resolveApiBaseUrl, REQUEST_TIMEOUT_MS } from '../config.js';
-
+import { resolveApiBaseUrl, REQUEST_TIMEOUT_MS } from './config.js';
 export class ApiError extends Error {
   constructor(message, status = 0) {
     super(message);
