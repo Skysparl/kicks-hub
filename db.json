@@ -10,7 +10,19 @@
       "salePrice": null,
       "description": "Clean all-white low-top that goes with everything.",
       "colours": [
-        { "name": "White", "hex": "#F5F5F2", "image": "assets/shoe1.webp", "sizes": { "5": 2, "6": 3, "7": 4, "8": 4, "9": 3, "10": 2 } }
+        {
+          "name": "White",
+          "hex": "#F5F5F2",
+          "image": "assets/shoe1.webp",
+          "sizes": {
+            "5": 2,
+            "6": 3,
+            "7": 4,
+            "8": 4,
+            "9": 3,
+            "10": 2
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:00:00.000Z"
@@ -25,7 +37,18 @@
       "salePrice": null,
       "description": "Polished leather Oxford with a leather sole. Built for the office and occasions.",
       "colours": [
-        { "name": "Black", "hex": "#1A1F2B", "image": "assets/shoe2.webp", "sizes": { "7": 1, "8": 2, "9": 2, "10": 1, "11": 1 } }
+        {
+          "name": "Black",
+          "hex": "#1A1F2B",
+          "image": "assets/shoe2.webp",
+          "sizes": {
+            "7": 1,
+            "8": 2,
+            "9": 2,
+            "10": 1,
+            "11": 1
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:01:00.000Z"
@@ -40,7 +63,19 @@
       "salePrice": null,
       "description": "Suede low-top with the classic three stripes and a gum sole.",
       "colours": [
-        { "name": "Black / White", "hex": "#1A1A1A", "image": "assets/shoe3.webp", "sizes": { "5": 2, "6": 3, "7": 3, "8": 4, "9": 3, "10": 2 } }
+        {
+          "name": "Black / White",
+          "hex": "#1A1A1A",
+          "image": "assets/shoe3.webp",
+          "sizes": {
+            "5": 2,
+            "6": 3,
+            "7": 3,
+            "8": 4,
+            "9": 3,
+            "10": 2
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:02:00.000Z"
@@ -55,7 +90,19 @@
       "salePrice": null,
       "description": "Retro high-top in sail and green.",
       "colours": [
-        { "name": "White / Green", "hex": "#E8EFE6", "image": "assets/shoe4.webp", "sizes": { "5": 2, "6": 2, "7": 3, "8": 3, "9": 2, "10": 1 } }
+        {
+          "name": "White / Green",
+          "hex": "#E8EFE6",
+          "image": "assets/shoe4.webp",
+          "sizes": {
+            "5": 2,
+            "6": 2,
+            "7": 3,
+            "8": 3,
+            "9": 2,
+            "10": 1
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:03:00.000Z"
@@ -70,7 +117,18 @@
       "salePrice": null,
       "description": "Cushioned everyday runner in white, blue and red.",
       "colours": [
-        { "name": "White / Blue", "hex": "#2F5FB3", "image": "assets/shoe5.webp", "sizes": { "3": 1, "4": 3, "5": 4, "6": 3, "7": 2 } }
+        {
+          "name": "White / Blue",
+          "hex": "#2F5FB3",
+          "image": "assets/shoe5.webp",
+          "sizes": {
+            "3": 1,
+            "4": 3,
+            "5": 4,
+            "6": 3,
+            "7": 2
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:04:00.000Z"
@@ -85,7 +143,18 @@
       "salePrice": null,
       "description": "Light retro runner in cream and grey.",
       "colours": [
-        { "name": "Cream / Grey", "hex": "#E9E6DF", "image": "assets/shoe6.webp", "sizes": { "3": 1, "4": 2, "5": 3, "6": 3, "7": 2 } }
+        {
+          "name": "Cream / Grey",
+          "hex": "#E9E6DF",
+          "image": "assets/shoe6.webp",
+          "sizes": {
+            "3": 1,
+            "4": 2,
+            "5": 3,
+            "6": 3,
+            "7": 2
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:05:00.000Z"
@@ -100,7 +169,18 @@
       "salePrice": null,
       "description": "Black tassel loafer with a croc-effect finish.",
       "colours": [
-        { "name": "Black", "hex": "#111111", "image": "assets/shoe7.webp", "sizes": { "7": 2, "8": 3, "9": 3, "10": 2, "11": 1 } }
+        {
+          "name": "Black",
+          "hex": "#111111",
+          "image": "assets/shoe7.webp",
+          "sizes": {
+            "7": 2,
+            "8": 3,
+            "9": 3,
+            "10": 2,
+            "11": 1
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:06:00.000Z"
@@ -115,7 +195,19 @@
       "salePrice": null,
       "description": "Leather double monk strap on a light sole.",
       "colours": [
-        { "name": "Black", "hex": "#2A2A2A", "image": "assets/shoe8.webp", "sizes": { "5": 1, "6": 2, "7": 3, "8": 3, "9": 2, "10": 1 } }
+        {
+          "name": "Black",
+          "hex": "#2A2A2A",
+          "image": "assets/shoe8.webp",
+          "sizes": {
+            "5": 1,
+            "6": 2,
+            "7": 3,
+            "8": 3,
+            "9": 2,
+            "10": 1
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:07:00.000Z"
@@ -130,18 +222,124 @@
       "salePrice": null,
       "description": "Low-top court sneaker in grey and brown suede.",
       "colours": [
-        { "name": "Grey / Brown", "hex": "#8A8580", "image": "assets/shoe9.webp", "sizes": { "4": 1, "5": 2, "6": 3, "7": 3, "8": 3, "9": 2 } }
+        {
+          "name": "Grey / Brown",
+          "hex": "#8A8580",
+          "image": "assets/shoe9.webp",
+          "sizes": {
+            "4": 1,
+            "5": 2,
+            "6": 3,
+            "7": 3,
+            "8": 3,
+            "9": 2
+          }
+        }
       ],
       "active": true,
       "createdAt": "2026-10-21T09:08:00.000Z"
     }
   ],
-  "cartItems": [],
+  "cartItems": [
+    {
+      "productId": 2,
+      "name": "Windsor Black Leather Sole Oxford",
+      "brand": "Windsor",
+      "image": "assets/shoe2.webp",
+      "colour": "Black",
+      "size": "7",
+      "quantity": 1,
+      "unitPrice": 17000,
+      "createdAt": "2026-10-22T09:38:14.865Z",
+      "id": 1
+    },
+    {
+      "productId": 9,
+      "name": "Unisex Sneakers",
+      "brand": "Kicks Hub Select",
+      "image": "assets/shoe9.webp",
+      "colour": "Grey / Brown",
+      "size": "4",
+      "quantity": 1,
+      "unitPrice": 3500,
+      "createdAt": "2026-10-22T09:57:49.375Z",
+      "id": 2
+    },
+    {
+      "productId": 5,
+      "name": "Female Sneaker",
+      "brand": "Kicks Hub Select",
+      "image": "assets/shoe5.webp",
+      "colour": "White / Blue",
+      "size": "3",
+      "quantity": 1,
+      "unitPrice": 3500,
+      "createdAt": "2026-10-22T09:58:01.245Z",
+      "id": 3
+    },
+    {
+      "productId": 2,
+      "name": "Windsor Black Leather Sole Oxford",
+      "brand": "Windsor",
+      "image": "assets/shoe2.webp",
+      "colour": "Black",
+      "size": "9",
+      "quantity": 2,
+      "unitPrice": 17000,
+      "createdAt": "2026-10-22T09:58:14.797Z",
+      "id": 4,
+      "updatedAt": "2026-10-22T09:58:25.064Z"
+    },
+    {
+      "productId": 9,
+      "name": "Unisex Sneakers",
+      "brand": "Kicks Hub Select",
+      "image": "assets/shoe9.webp",
+      "colour": "Grey / Brown",
+      "size": "7",
+      "quantity": 1,
+      "unitPrice": 3500,
+      "createdAt": "2026-10-22T10:15:32.861Z",
+      "id": 5
+    },
+    {
+      "productId": 8,
+      "name": "Unisex Official",
+      "brand": "Kicks Hub Select",
+      "image": "assets/shoe8.webp",
+      "colour": "Black",
+      "size": "5",
+      "quantity": 1,
+      "unitPrice": 3500,
+      "createdAt": "2026-10-22T10:15:39.656Z",
+      "id": 6
+    }
+  ],
   "orders": [],
   "deliveryZones": [
-    { "id": 1, "name": "Nairobi CBD & Westlands", "fee": 250, "eta": "Same day" },
-    { "id": 2, "name": "Greater Nairobi", "fee": 400, "eta": "1 day" },
-    { "id": 3, "name": "Major towns", "fee": 600, "eta": "1–2 days" },
-    { "id": 4, "name": "Rest of Kenya", "fee": 800, "eta": "2–4 days" }
+    {
+      "id": 1,
+      "name": "Nairobi CBD & Westlands",
+      "fee": 250,
+      "eta": "Same day"
+    },
+    {
+      "id": 2,
+      "name": "Greater Nairobi",
+      "fee": 400,
+      "eta": "1 day"
+    },
+    {
+      "id": 3,
+      "name": "Major towns",
+      "fee": 600,
+      "eta": "1–2 days"
+    },
+    {
+      "id": 4,
+      "name": "Rest of Kenya",
+      "fee": 800,
+      "eta": "2–4 days"
+    }
   ]
 }
