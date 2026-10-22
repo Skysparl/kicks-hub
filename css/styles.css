@@ -99,15 +99,14 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .promo-bar { margin: 0; background: var(--mint); color: var(--navy); text-align: center; font-size: 0.85rem; font-weight: 500; padding: 0.45rem 1rem; }
 
 .site-header {
-  background-color: var(--surface); /* Makes the header solid white so shoes can't show through it */
+  background-color: var(--surface);
   border-bottom: 1px solid var(--line);
   position: static;
-  top: 0;
   z-index: 1000; /* Keeps the header firmly layered on top */
 }
 .header-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 2rem; padding-block: 0.8rem; }
 .logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-.logo-mark { max-width: 100%; height: auto; object-fit: contain; }
+.logo-mark { height: 60px; width: auto; max-width: 200px; object-fit: contain; }
 .logo-word { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--navy); margin: 0; }
 .logo-word span { color: var(--red); }
 .logo-word-light { color: #fff; }
@@ -148,7 +147,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* ---------- Shop layout & Product Grid ---------- */
 .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; }
 .shop-layout { display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; padding-block: 2rem 3.5rem; }
-.filters { flex: 1 1 15rem; max-width: 17rem; position: static; top: 5.5rem; }
+.filters { flex: 1 1 15rem; max-width: 17rem; position: static; }
 .filters-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem; }
 .filters-head h2 { font-size: 1.15rem; }
 .filters fieldset { border: none; margin: 0 0 1.25rem; padding: 0; }
@@ -211,6 +210,20 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-weight: 700;
   color: var(--red-text);
   margin-bottom: 0.75rem;
+}
+
+.btn-add {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: #b81f30;
 }
 
 .site-footer {
