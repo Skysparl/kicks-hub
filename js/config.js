@@ -28,4 +28,4 @@ export const GENDERS = { men: 'Men', women: 'Women', unisex: 'Unisex' };
 export const PAYMENT_METHODS = { mpesa: 'M-Pesa', cod: 'Cash on Delivery' };
 
 export const MAX_QTY_PER_LINE = 10;
-export const FREE_DELIVERY_THRESHOLD = 15000; // KES
+export const FREE_DELIVERY_THRESHOLD = 10000; // KES
