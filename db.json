@@ -46,12 +46,13 @@
             "8": 2,
             "9": 2,
             "10": 1,
-            "11": 1
+            "11": 0
           }
         }
       ],
       "active": true,
-      "createdAt": "2026-10-21T09:01:00.000Z"
+      "createdAt": "2026-10-21T09:01:00.000Z",
+      "updatedAt": "2026-10-26T06:38:30.364Z"
     },
     {
       "id": 3,
@@ -122,7 +123,7 @@
           "hex": "#2F5FB3",
           "image": "assets/shoe5.webp",
           "sizes": {
-            "3": 1,
+            "3": 0,
             "4": 3,
             "5": 4,
             "6": 3,
@@ -131,7 +132,8 @@
         }
       ],
       "active": true,
-      "createdAt": "2026-10-21T09:04:00.000Z"
+      "createdAt": "2026-10-21T09:04:00.000Z",
+      "updatedAt": "2026-10-26T06:38:30.327Z"
     },
     {
       "id": 6,
@@ -174,7 +176,7 @@
           "hex": "#111111",
           "image": "assets/shoe7.webp",
           "sizes": {
-            "7": 2,
+            "7": 1,
             "8": 3,
             "9": 3,
             "10": 2,
@@ -183,7 +185,8 @@
         }
       ],
       "active": true,
-      "createdAt": "2026-10-21T09:06:00.000Z"
+      "createdAt": "2026-10-21T09:06:00.000Z",
+      "updatedAt": "2026-10-26T06:38:30.346Z"
     },
     {
       "id": 8,
@@ -200,7 +203,7 @@
           "hex": "#2A2A2A",
           "image": "assets/shoe8.webp",
           "sizes": {
-            "5": 1,
+            "5": 0,
             "6": 2,
             "7": 3,
             "8": 3,
@@ -210,7 +213,8 @@
         }
       ],
       "active": true,
-      "createdAt": "2026-10-21T09:07:00.000Z"
+      "createdAt": "2026-10-21T09:07:00.000Z",
+      "updatedAt": "2026-10-22T19:15:19.814Z"
     },
     {
       "id": 9,
@@ -242,80 +246,96 @@
   ],
   "cartItems": [
     {
-      "productId": 2,
-      "name": "Windsor Black Leather Sole Oxford",
-      "brand": "Windsor",
-      "image": "assets/shoe2.webp",
-      "colour": "Black",
-      "size": "7",
-      "quantity": 1,
-      "unitPrice": 17000,
-      "createdAt": "2026-10-22T09:38:14.865Z",
-      "id": 1
-    },
-    {
-      "productId": 9,
-      "name": "Unisex Sneakers",
-      "brand": "Kicks Hub Select",
-      "image": "assets/shoe9.webp",
-      "colour": "Grey / Brown",
-      "size": "4",
-      "quantity": 1,
-      "unitPrice": 3500,
-      "createdAt": "2026-10-22T09:57:49.375Z",
-      "id": 2
-    },
-    {
       "productId": 5,
       "name": "Female Sneaker",
       "brand": "Kicks Hub Select",
       "image": "assets/shoe5.webp",
       "colour": "White / Blue",
-      "size": "3",
+      "size": "4",
       "quantity": 1,
       "unitPrice": 3500,
-      "createdAt": "2026-10-22T09:58:01.245Z",
-      "id": 3
-    },
-    {
-      "productId": 2,
-      "name": "Windsor Black Leather Sole Oxford",
-      "brand": "Windsor",
-      "image": "assets/shoe2.webp",
-      "colour": "Black",
-      "size": "9",
-      "quantity": 2,
-      "unitPrice": 17000,
-      "createdAt": "2026-10-22T09:58:14.797Z",
-      "id": 4,
-      "updatedAt": "2026-10-22T09:58:25.064Z"
-    },
-    {
-      "productId": 9,
-      "name": "Unisex Sneakers",
-      "brand": "Kicks Hub Select",
-      "image": "assets/shoe9.webp",
-      "colour": "Grey / Brown",
-      "size": "7",
-      "quantity": 1,
-      "unitPrice": 3500,
-      "createdAt": "2026-10-22T10:15:32.861Z",
-      "id": 5
-    },
-    {
-      "productId": 8,
-      "name": "Unisex Official",
-      "brand": "Kicks Hub Select",
-      "image": "assets/shoe8.webp",
-      "colour": "Black",
-      "size": "5",
-      "quantity": 1,
-      "unitPrice": 3500,
-      "createdAt": "2026-10-22T10:15:39.656Z",
-      "id": 6
+      "createdAt": "2026-10-26T07:57:08.069Z",
+      "id": 1
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "customer": {
+        "name": "Mumbua Mbithi",
+        "phone": "254757470451",
+        "location": "kenyatta road js apartment",
+        "notes": ""
+      },
+      "zone": {
+        "id": 1,
+        "name": "Nairobi CBD & Westlands",
+        "fee": 250
+      },
+      "items": [
+        {
+          "productId": 8,
+          "name": "Unisex Official",
+          "colour": "Black",
+          "size": "5",
+          "quantity": 2,
+          "unitPrice": 3500
+        }
+      ],
+      "subtotal": 7000,
+      "deliveryFee": 250,
+      "total": 7250,
+      "payment": "mpesa",
+      "status": "paid",
+      "createdAt": "2026-10-22T19:15:19.756Z",
+      "id": 1
+    },
+    {
+      "customer": {
+        "name": "Mumbua Mbithi",
+        "phone": "254757470451",
+        "location": "Kalimani",
+        "notes": ""
+      },
+      "zone": {
+        "id": 4,
+        "name": "Rest of Kenya",
+        "fee": 800
+      },
+      "items": [
+        {
+          "productId": 5,
+          "name": "Female Sneaker",
+          "colour": "White / Blue",
+          "size": "3",
+          "quantity": 1,
+          "unitPrice": 3500
+        },
+        {
+          "productId": 7,
+          "name": "Official Male Shoe",
+          "colour": "Black",
+          "size": "7",
+          "quantity": 1,
+          "unitPrice": 5500
+        },
+        {
+          "productId": 2,
+          "name": "Windsor Black Leather Sole Oxford",
+          "colour": "Black",
+          "size": "11",
+          "quantity": 1,
+          "unitPrice": 17000
+        }
+      ],
+      "subtotal": 26000,
+      "deliveryFee": 0,
+      "total": 26000,
+      "payment": "mpesa",
+      "status": "paid",
+      "createdAt": "2026-10-26T06:38:30.308Z",
+      "id": 2
+    }
+  ],
   "deliveryZones": [
     {
       "id": 1,
