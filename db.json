@@ -227,7 +227,7 @@
           "hex": "#8A8580",
           "image": "assets/shoe9.webp",
           "sizes": {
-            "4": 1,
+            "4": 0,
             "5": 2,
             "6": 3,
             "7": 3,
@@ -237,11 +237,43 @@
         }
       ],
       "active": true,
-      "createdAt": "2026-10-21T09:08:00.000Z"
+      "createdAt": "2026-10-21T09:08:00.000Z",
+      "updatedAt": "2026-10-27T12:27:18.437Z"
     }
   ],
   "cartItems": [],
-  "orders": [],
+  "orders": [
+    {
+      "customer": {
+        "name": "Mumbua Mbithi",
+        "phone": "254757470451",
+        "location": "makueni wote",
+        "notes": ""
+      },
+      "zone": {
+        "id": 3,
+        "name": "Major towns",
+        "fee": 600
+      },
+      "items": [
+        {
+          "productId": 9,
+          "name": "Unisex Sneakers",
+          "colour": "Grey / Brown",
+          "size": "4",
+          "quantity": 1,
+          "unitPrice": 3500
+        }
+      ],
+      "subtotal": 3500,
+      "deliveryFee": 600,
+      "total": 4100,
+      "payment": "cod",
+      "status": "pending",
+      "createdAt": "2026-10-27T12:27:18.388Z",
+      "id": 1
+    }
+  ],
   "deliveryZones": [
     {
       "id": 1,

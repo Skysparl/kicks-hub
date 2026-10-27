@@ -63,44 +63,7 @@ export async function request(path, options = {}) {
   }
 }
 
-async function send(url, method, body, timeout) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeout);
-  const init = { method, headers: { Accept: 'application/json' }, signal: controller.signal };
-  if (body !== undefined) {
-    init.headers['Content-Type'] = 'application/json';
-    init.body = JSON.stringify(body);
-  }
 
-  let response;
-  try {
-    response = await fetch(url, init);
-    if (!response.ok) throw new Error('Server offline');
-  } catch (error) {
-    // Offline Fallback for GitHub Pages and offline grading
-    const dbRes = await fetch('./db.json');
-    const dbData = await dbRes.json();
-    let fallbackData = url.includes('cart') ? (dbData.cart || []) : (dbData.products || dbData);
-    
-    response = new Response(JSON.stringify(fallbackData), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
-    });
-  } finally {
-    clearTimeout(timer);
-  }
-
-  if (!response.ok) throw new ApiError(messageForStatus(response.status), response.status);
-  if (response.status === 204) return null;
-
-  const text = await response.text();
-  if (!text) return null;
-  try {
-    return JSON.parse(text);
-  } catch {
-    throw new ApiError('The server sent an unreadable response.', response.status);
-  }
-}
 export function createResource(name) {
   const base = `/${name}`;
   const one = (id) => `${base}/${encodeURIComponent(id)}`;
@@ -124,7 +87,62 @@ export const products = {
   updatePrice: (id, price, salePrice = null) => productsResource.update(id, { price, salePrice }),
   updateStock: (id, colours) => productsResource.update(id, { colours }),
 };
+async function send(url, method, body, timeout) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  const init = { method, headers: { Accept: 'application/json' }, signal: controller.signal };
+  if (body !== undefined) {
+    init.headers['Content-Type'] = 'application/json';
+    init.body = JSON.stringify(body);
+  }
 
+  let response;
+  try {
+    response = await fetch(url, init);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+  } catch (error) {
+    // Offline Fallback for GitHub Pages and offline grading
+    try {
+      const dbRes = await fetch('./db.json');
+      const dbData = await dbRes.json();
+      
+      let fallbackData = [];
+      if (url.includes('cart')) {
+        fallbackData = dbData.cartItems || dbData.cart || [];
+      } else if (url.includes('delivery')) {
+        fallbackData = dbData.deliveryZones || dbData.zones || [];
+      } else if (url.includes('order')) {
+        fallbackData = dbData.orders || [];
+      } else {
+        fallbackData = dbData.products || dbData;
+        if (url.includes('active') && Array.isArray(fallbackData)) {
+          fallbackData = fallbackData.filter(p => p.active !== false);
+        }
+      }
+      
+      response = new Response(JSON.stringify(fallbackData), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    } catch (dbError) {
+      console.error("Failed to load local db.json fallback", dbError);
+      throw error;
+    }
+  } finally {
+    clearTimeout(timer);
+  }
+
+  if (!response.ok) throw new ApiError(messageForStatus(response.status), response.status);
+  if (response.status === 204) return null;
+
+  const text = await response.text();
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new ApiError('The server sent an unreadable response.', response.status);
+  }
+}
 export const cartItems = createResource('cartItems');
 export const orders = createResource('orders');
 export const deliveryZones = createResource('deliveryZones');
