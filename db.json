@@ -240,68 +240,7 @@
       "createdAt": "2026-10-21T09:08:00.000Z"
     }
   ],
-  "cartItems": [
-    {
-      "productId": 8,
-      "name": "Unisex Official",
-      "brand": "Kicks Hub Select",
-      "image": "assets/shoe8.webp",
-      "colour": "Black",
-      "size": "5",
-      "quantity": 1,
-      "unitPrice": 3500,
-      "createdAt": "2026-10-22T10:15:39.656Z",
-      "id": 6
-    },
-    {
-      "productId": 8,
-      "name": "Unisex Official",
-      "brand": "Kicks Hub Select",
-      "image": "assets/shoe8.webp",
-      "colour": "Black",
-      "size": "6",
-      "quantity": 1,
-      "unitPrice": 3500,
-      "createdAt": "2026-10-27T08:19:15.893Z",
-      "id": 7
-    },
-    {
-      "productId": 3,
-      "name": "Campus Adidas",
-      "brand": "Adidas",
-      "image": "assets/shoe3.webp",
-      "colour": "Black / White",
-      "size": "5",
-      "quantity": 1,
-      "unitPrice": 4000,
-      "createdAt": "2026-10-27T08:51:07.610Z",
-      "id": 8
-    },
-    {
-      "productId": 2,
-      "name": "Windsor Black Leather Sole Oxford",
-      "brand": "Windsor",
-      "image": "assets/shoe2.webp",
-      "colour": "Black",
-      "size": "7",
-      "quantity": 1,
-      "unitPrice": 17000,
-      "createdAt": "2026-10-27T09:16:10.930Z",
-      "id": 9
-    },
-    {
-      "productId": 5,
-      "name": "Female Sneaker",
-      "brand": "Kicks Hub Select",
-      "image": "assets/shoe5.webp",
-      "colour": "White / Blue",
-      "size": "3",
-      "quantity": 1,
-      "unitPrice": 3500,
-      "createdAt": "2026-10-27T11:08:19.854Z",
-      "id": 10
-    }
-  ],
+  "cartItems": [],
   "orders": [],
   "deliveryZones": [
     {

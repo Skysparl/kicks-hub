@@ -81,15 +81,17 @@ export function validateAddToCart(product, { colour, size, quantity = 1 }, items
 
 export function buildLine(product, { colour, size, quantity = 1 }) {
   const variant = getVariant(product, colour);
+  const unitPrice = getUnitPrice(product);
   return {
     productId: product.id,
     name: product.name,
     brand: product.brand,
-    image: variant.image,
-    colour: variant.name,
+    image: variant?.image || variant?.img || product.image || '',
+    colour: variant?.name || colour,
     size: String(size),
     quantity,
-    unitPrice: getUnitPrice(product),
+    unitPrice: unitPrice,
+    price: unitPrice,
   };
 }
 
