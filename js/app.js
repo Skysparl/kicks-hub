@@ -1,7 +1,7 @@
 // app.js - loads the shoes from JSON Server and shows them on the shop page.
 import { products as productsApi } from './api.js';
 import { createCart } from './cart.js';
-import { formatKES } from './ui.js';
+import { formatKES, setImage } from './ui.js';
 import { setupCheckout, showConfirmation } from './checkout.js';
 
 // Elements from index.html
@@ -28,7 +28,7 @@ function makeCard(shoe) {
   li.dataset.category = shoe.category;
 
   const img = document.createElement('img');
-  img.src = colour.image;
+  setImage(img, colour.image);
   img.alt = shoe.name;
   img.className = 'product-img';
 
@@ -196,7 +196,7 @@ export async function createShopApp() {
     applyFilters();
   });
 
-  message.textContent = 'Loading shoes...';
+  message.textContent = 'Loading shoes... (the first visit can take up to a minute while our server wakes up)';
   message.hidden = false;
 
   try {

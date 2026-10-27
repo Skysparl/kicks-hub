@@ -1,6 +1,6 @@
 // checkout.js - the cart page, the delivery details form and the order confirmation.
 import { deliveryZones, orders, products } from './api.js';
-import { formatKES, formatDate } from './ui.js';
+import { formatKES, formatDate, setImage } from './ui.js';
 import { FREE_DELIVERY_THRESHOLD } from './config.js';
 
 // ---------- Helpers (no page needed, so they are easy to test) ----------
@@ -108,7 +108,7 @@ function renderCart() {
     const li = document.createElement('li');
     li.className = 'cart-line';
     li.innerHTML = `
-      <img src="${item.image}" alt="">
+      <img alt="">
       <div>
         <h2 class="line-name"></h2>
         <p class="line-variant"></p>
@@ -122,6 +122,7 @@ function renderCart() {
       <p class="line-total">${formatKES(item.unitPrice * item.quantity)}</p>
       <button type="button" class="link-btn">Remove</button>
     `;
+    setImage(li.querySelector('img'), item.image);
     li.querySelector('.line-name').textContent = item.name;
     li.querySelector('.line-variant').textContent = `${item.colour} · UK ${item.size}`;
 

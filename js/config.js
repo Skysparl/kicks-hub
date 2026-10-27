@@ -11,7 +11,8 @@ export function resolveApiBaseUrl(location = globalThis.location ?? {}) {
   return isLocal ? LOCAL_API_URL : DEPLOYED_API_URL;
 }
 
-export const REQUEST_TIMEOUT_MS = 10000;
+/** Free Render servers sleep when idle and can take ~30-60s to wake, so allow plenty of time. */
+export const REQUEST_TIMEOUT_MS = 45000;
 
 /** UK / Kenyan shoe sizes the shop stocks. */
 export const UK_SIZES = ['3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];

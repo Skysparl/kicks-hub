@@ -44,8 +44,8 @@ export async function request(path, options = {}) {
     body,
     baseUrl = resolveApiBaseUrl(),
     timeout = REQUEST_TIMEOUT_MS,
-    retries = method === 'GET' ? 1 : 0,
-    retryDelay = 400,
+    retries = method === 'GET' ? 2 : 0,
+    retryDelay = 1500,
   } = options;
 
   setPending(1);
