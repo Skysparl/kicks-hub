@@ -73,15 +73,20 @@ async function send(url, method, body, timeout) {
   }
 
   let response;
-  try {
+try {
     response = await fetch(url, init);
-  } catch (err) {
-    throw new ApiError(
-      err?.name === 'AbortError'
-        ? 'The server took too long to respond. Check your connection and try again.'
-        : 'Could not reach Kicks Hub. Check your internet connection.',
-      0,
-    );
+    if (!response.ok) throw new Error('Server offline');
+  } catch (error) {
+    // Fallback directly to static db.json when json-server is offline
+    const dbRes = await fetch('./db.json');
+    const dbData = await dbRes.json();
+    let fallbackData = url.includes('cart') ? (dbData.cart || []) : (dbData.products || dbData);
+    
+    response = new Response(JSON.stringify(fallbackData), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
   } finally {
     clearTimeout(timer);
   }
