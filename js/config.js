@@ -1,10 +1,10 @@
 /**
- * App-wide configuration. Replace DEPLOYED_API_URL after deploying the JSON Server backend.
+ * App-wide configuration.
  */
 export const LOCAL_API_URL = 'http://localhost:3000';
 export const DEPLOYED_API_URL = 'https://kicks-hub-api.onrender.com';
 
-/** Picks the local API on localhost/file://, the deployed API everywhere else. */
+/** Picks the local API on localhost/file://, the deployed API elsewhere. */
 export function resolveApiBaseUrl(location = globalThis.location ?? {}) {
   const { hostname = '', protocol = '' } = location;
   const isLocal = protocol === 'file:' || ['localhost', '127.0.0.1', ''].includes(hostname);
@@ -24,8 +24,15 @@ export const CATEGORIES = {
 
 export const GENDERS = { men: 'Men', women: 'Women', unisex: 'Unisex' };
 
-/** Pre-delivery payment options only — no cards. */
+/** Pre-delivery payment options only – no cards. */
 export const PAYMENT_METHODS = { mpesa: 'M-Pesa', cod: 'Cash on Delivery' };
 
 export const MAX_QTY_PER_LINE = 10;
-export const FREE_DELIVERY_THRESHOLD = 10000; // KES
+export const FREE_DELIVERY_THRESHOLD = 10000;
+export const STANDARD_SHIPPING_FEE = 350;
+
+export const SHOP_CONTACT = {
+  phone: '+254 700 000 000',
+  email: 'hello@kickshub.co.ke',
+  location: 'Nairobi, Kenya',
+};

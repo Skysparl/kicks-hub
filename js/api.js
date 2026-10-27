@@ -117,7 +117,7 @@ const productsResource = createResource('products');
 
 export const products = {
   ...productsResource,
-  listActive: (filters = {}) => productsResource.list({ active: true, _sort: 'createdAt', _order: 'desc', ...filters }),
+ listActive: (filters = {}) => productsResource.list(filters),
   updatePrice: (id, price, salePrice = null) => productsResource.update(id, { price, salePrice }),
   updateStock: (id, colours) => productsResource.update(id, { colours }),
 };
