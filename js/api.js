@@ -103,7 +103,7 @@ async function send(url, method, body, timeout) {
   } catch (error) {
     // Offline Fallback for GitHub Pages and offline grading
     try {
-      const dbRes = await fetch('./db.json');
+      const dbRes = await fetch('db.json');
       const dbData = await dbRes.json();
       
       let fallbackData = [];

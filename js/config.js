@@ -6,6 +6,10 @@ export const DEPLOYED_API_URL = 'https://kicks-hub-api.onrender.com';
 
 /** Picks the local API on localhost/file://, the deployed API elsewhere. */
 export function resolveApiBaseUrl(location = globalThis.location ?? {}) {
+  const hostname = location.hostname || '';
+  if (hostname.includes('github.io')) {
+    return '/kicks-hub';
+  }
   return '';
 }
 export const REQUEST_TIMEOUT_MS = 10000;
