@@ -6,11 +6,8 @@ export const DEPLOYED_API_URL = 'https://kicks-hub-api.onrender.com';
 
 /** Picks the local API on localhost/file://, the deployed API elsewhere. */
 export function resolveApiBaseUrl(location = globalThis.location ?? {}) {
-  const { hostname = '', protocol = '' } = location;
-  const isLocal = protocol === 'file:' || ['localhost', '127.0.0.1', ''].includes(hostname);
-  return isLocal ? LOCAL_API_URL : DEPLOYED_API_URL;
+  return '';
 }
-
 export const REQUEST_TIMEOUT_MS = 10000;
 
 /** UK / Kenyan shoe sizes the shop stocks. */
