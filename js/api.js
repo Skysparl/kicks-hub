@@ -143,6 +143,6 @@ async function send(url, method, body, timeout) {
     throw new ApiError('The server sent an unreadable response.', response.status);
   }
 }
-export const cartItems = createResource('cartItems');
+export { cartItems } from './cart-store.js';
 export const orders = createResource('orders');
 export const deliveryZones = createResource('deliveryZones');
