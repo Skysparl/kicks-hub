@@ -2,7 +2,7 @@
  * App-wide configuration.
  */
 export const LOCAL_API_URL = 'http://localhost:3000';
-export const DEPLOYED_API_URL = 'https://kicks-hub-api.onrender.com';
+export const DEPLOYED_API_URL = 'https://kicks-hub.onrender.com';
 
 /** Picks the local API on localhost/file://, the deployed API elsewhere. */
 export function resolveApiBaseUrl(location = globalThis.location ?? {}) {
