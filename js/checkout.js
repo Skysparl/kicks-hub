@@ -1,5 +1,5 @@
 // checkout.js - the cart page, the delivery details form and the order confirmation.
-import { deliveryZones, orders, products } from './api.js';
+import { deliveryZones, orders, products, mpesa } from './api.js';
 import { formatKES, formatDate } from './ui.js';
 import { FREE_DELIVERY_THRESHOLD } from './config.js';
 
@@ -50,7 +50,7 @@ export function buildOrder(items, zone, values, totals) {
     deliveryFee: totals.deliveryFee,
     total: totals.total,
     payment: values.payment,
-    status: values.payment === 'mpesa' ? 'paid' : 'pending',
+    status: 'pending', // the server marks M-Pesa orders as paid when Safaricom confirms
   };
 }
 
@@ -195,16 +195,31 @@ function showFieldErrors(errors) {
   });
 }
 
-// Pretend M-Pesa STK push: show the "check your phone" box for 3 seconds.
-function simulateMpesa(phone, total) {
-  mpesaText.textContent = `Enter your M-Pesa PIN on ${phone} to pay ${formatKES(total)} to Kicks Hub.`;
+const MPESA_WAIT_MS = 90000; // how long we wait for the customer to enter their PIN
+const MPESA_POLL_MS = 3000;
+
+// Real M-Pesa STK push: the server sends the PIN prompt to the customer's phone,
+// then we check the order every few seconds until Safaricom says paid or failed.
+async function payWithMpesa(order) {
+  mpesaText.textContent = `Sending an M-Pesa prompt to ${order.customer.phone} for ${formatKES(order.total)}...`;
   mpesaDialog.showModal();
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      mpesaDialog.close();
-      resolve();
-    }, 3000);
-  });
+  try {
+    await mpesa.stkPush(order.id);
+    mpesaText.textContent = `Enter your M-Pesa PIN on ${order.customer.phone} to pay ${formatKES(order.total)} to Kicks Hub.`;
+
+    const giveUpAt = Date.now() + MPESA_WAIT_MS;
+    while (Date.now() < giveUpAt) {
+      await new Promise((resolve) => setTimeout(resolve, MPESA_POLL_MS));
+      const latest = await orders.get(order.id);
+      if (latest.status === 'paid') return latest;
+      if (latest.status === 'payment_failed') {
+        throw new Error(`M-Pesa payment was not completed (${latest.mpesa?.resultDesc || 'cancelled'}). Your cart is still here, so you can try again.`);
+      }
+    }
+    throw new Error('We did not get an M-Pesa confirmation in time. If money left your account, contact us with your M-Pesa message. Otherwise try again.');
+  } finally {
+    mpesaDialog.close();
+  }
 }
 
 // Takes the bought pairs off the stock (PATCH /products/:id).
@@ -243,8 +258,8 @@ async function placeOrder(event) {
   placeButton.textContent = 'Placing order...';
 
   try {
-    if (values.payment === 'mpesa') await simulateMpesa(values.phone, totals.total);
     const order = await orders.create(buildOrder(items, zone, values, totals)); // POST /orders
+    if (values.payment === 'mpesa') await payWithMpesa(order); // throws if not paid
     await reduceStock(items);
     await cart.clear(); // DELETE /cartItems/:id for each item
     form.reset();

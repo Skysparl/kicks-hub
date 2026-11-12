@@ -101,6 +101,16 @@ async function send(url, method, body, timeout) {
     response = await fetch(url, init);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
   } catch (error) {
+    // Saving (POST/PATCH/PUT/DELETE) must never be faked from db.json,
+    // or the order looks saved when it was not.
+    if (method !== 'GET') {
+      clearTimeout(timer);
+      if (response) {
+        const data = await response.json().catch(() => ({}));
+        throw new ApiError(data.error || messageForStatus(response.status), response.status);
+      }
+      throw new ApiError('Could not reach the shop server. Check your connection and try again.', 0);
+    }
     // Offline Fallback for GitHub Pages and offline grading
     try {
       const dbRes = await fetch('db.json');
@@ -146,3 +156,8 @@ async function send(url, method, body, timeout) {
 export { cartItems } from './cart-store.js';
 export const orders = createResource('orders');
 export const deliveryZones = createResource('deliveryZones');
+
+// Real M-Pesa: ask the server to send the STK prompt for a saved order.
+export const mpesa = {
+  stkPush: (orderId) => request('/mpesa/stkpush', { method: 'POST', body: { orderId }, timeout: 30000 }),
+};
